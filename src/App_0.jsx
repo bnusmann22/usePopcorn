@@ -122,7 +122,7 @@ export default function App() {
 
 function MovieDetails({selectedId, onCloseId}){
   return <div className="details">
-    <button className="btn-close" onClick={onCloseId}>&larr;</button>
+    <button className="btn-back" onClick={onCloseId}>&larr;</button>
     {selectedId}
   </div>
 }
