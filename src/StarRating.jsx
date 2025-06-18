@@ -1,6 +1,7 @@
 import { useState } from "react"
 // import PropTypes from "prop-types"
 
+
 const containerStyles={
     display:"flex",
     alignItems: "center",
@@ -11,7 +12,9 @@ const starContainerStyles={
     display:"flex",
 }
 
-//To be run withinternet
+
+
+////To be run withinternet
 // StarRating.propTypes={
 //     maxRating: PropTypes.number
 // }
@@ -40,6 +43,8 @@ function StarRating(
         setRating(rating)
         onSetRating(rating)
     }
+
+    
   return (
     <div style={containerStyles}>
         <div style={starContainerStyles}>
