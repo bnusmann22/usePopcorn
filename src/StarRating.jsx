@@ -26,7 +26,8 @@ function StarRating(
         size = 48,
         messages= [],
         defaultRating = 0,
-        onSetRating
+        onSetRating,
+        className =""
     }
     ) {
   const [rating , setRating] = useState(defaultRating)
@@ -46,7 +47,7 @@ function StarRating(
 
     
   return (
-    <div style={containerStyles}>
+    <div style={containerStyles} className={className}>
         <div style={starContainerStyles}>
             {Array.from({length: maxRating}, (_, i) => 
                 <Star 

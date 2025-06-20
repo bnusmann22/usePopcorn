@@ -56,7 +56,17 @@ body {
   border-radius: 0.9rem;
 
   position: relative;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
 }
+
+
+/* Scrollbar Thumb */
+.box::-webkit-scrollbar {
+ display: none;
+}
+
 
 .loader {
   text-align: center;
