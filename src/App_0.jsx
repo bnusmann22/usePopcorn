@@ -177,6 +177,15 @@ function MovieDetails({selectedId, onCloseId, onAddWatched, watched}){
     getMovieDetails()
   }, [selectedId])
 
+  useEffect(function(){
+    if (!title) return;
+    document.title = `Movie || ${title}`
+
+    return function(){
+      document.title = `usePopcorn`
+    }
+  },[title])
+
 
   return <div className="details">
     {
@@ -342,8 +351,8 @@ function Movie({movie, onSelectMovie}){
 
 
 function WatchedSummary({watched}){
-  const avgImdbRating = average(watched.map((movie) => movie.imdbRating));
-  const avgUserRating = average(watched.map((movie) => movie.userRating));
+  const avgImdbRating = average(watched.map((movie) => movie.imdbRating)).toFixed(2);
+  const avgUserRating = average(watched.map((movie) => movie.userRating)).toFixed(2);
   const avgRuntime = average(watched.map((movie) => movie.runtime));
   return (
     <div className="summary">
