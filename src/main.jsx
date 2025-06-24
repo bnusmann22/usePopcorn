@@ -1,5 +1,6 @@
 import { StrictMode } from 'react'
 // import { useState } from 'react'
+// import Test from './Test'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App_0'
@@ -16,7 +17,7 @@ import App from './App_0'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App /> 
+    <App />  
     {/* <>
       <StarRating maxRating={5} messages= {["Terrible", "Bad" , "average" , "Good" , "Excellent"]}/>  
       <StarRating maxRating={10} size={20} color='red' defaultRating={5}/> 
