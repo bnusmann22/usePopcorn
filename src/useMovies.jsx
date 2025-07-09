@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react'
+const KEY = `60a65fba`
 export function useMovies(query){
     const [movies, setMovies] = useState([]);
     const [isLoading , setIsLoading] = useState(false)
@@ -34,8 +35,9 @@ export function useMovies(query){
             setError("");
             return;
           }
-        handleCloseMovie()
+        // handleCloseMovie()
         fetchData();
         }, 
       [query]);
+      return {movies , isLoading , error};
 }
