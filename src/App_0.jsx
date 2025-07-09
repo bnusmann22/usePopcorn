@@ -13,9 +13,6 @@ const average = (arr) => {
 
 
 export default function App() {
-  const [movies, setMovies] = useState([]);
-  const [isLoading , setIsLoading] = useState(false)
-  const [error, setError] = useState("") 
   const [selectedId, setSelectedId] = useState(null)
   const [query, setQuery] = useState("");
   // const [watched, setWatched] = useState([]);
@@ -47,40 +44,7 @@ export default function App() {
     localStorage.setItem("watched",JSON.stringify(watched))
   },[watched])
 
-  useEffect(function (){
-    const controller = new AbortController()
-    async function fetchData() {
-      try{
-      setIsLoading(true)
-      setError("")
-      const res = await fetch(
-        `https://www.omdbapi.com/?apikey=${KEY}&s=${query}`
-        , {signal: controller.signal}
-      );
-      
-      if (!res.ok) throw new Error ("Oops, Something went wrong")
 
-      const data = await res.json();
-      if (data.Response === "False") throw new Error ("Movie not found")
-
-      setMovies(data.Search);
-    }catch(err){    
-      if(err.name !== "AbortError"){
-        setError(err.message)
-      }  
-      }finally{
-        setIsLoading(false)
-      }
-      }
-      if (!query.length || query.length < 3 ) {
-        setMovies([]);
-        setError("");
-        return;
-      }
-    handleCloseMovie()
-    fetchData();
-    }, 
-  [query]);
 
   return (
     <>
