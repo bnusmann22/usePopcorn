@@ -34,16 +34,21 @@ export default function GeoLocate(){
         {isLoading && <p>Loading Position ...</p>}
         {error && <p>Error</p>}
         {!isLoading && !error && lat && lng && (
-            <p>
-                Your GPS position: 
-                <a
-                    target='_blank'
-                    rel="noreferrer"
-                    href={`https://www.openstreetmap.org/#map=16/${lat}/${lng}`}
-                >
-                    {lat}{lng}
-                </a>
-            </p>
+            <div>
+                <p>
+                    Your GPS position: 
+                    <a
+                        target='_blank'
+                        rel="noreferrer"
+                        href={`https://www.openstreetmap.org/#map=16/${lat}/${lng}`}
+                    >
+                        {lat} / {lng}
+                    </a>
+                </p>
+                <div>
+                    Tap on the position 👆🤗
+                </div>
+            </div>
         )}
     </div>
 }
